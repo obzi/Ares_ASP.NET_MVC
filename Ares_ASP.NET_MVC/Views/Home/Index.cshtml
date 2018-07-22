@@ -1,0 +1,59 @@
+﻿@model Ares_ASP.NET_MVC.Models.Firm
+
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+
+<h2>Vyhledávání firem v ARES dle IČO. </h2>   
+
+<div class="jumbotron">
+
+    @Html.AntiForgeryToken()
+
+    <div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ICO)
+        </div>
+
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ICO)
+            @Html.ValidationMessageFor(model => model.ICO, null, "Vyplňte povinné pole!")
+        </div>
+
+        <br />
+
+        <p>
+            <input type="submit" value="Vyhledat" />
+        </p>
+    </div>
+
+    <div>
+        @if (ViewBag.ICO != null)
+        {
+            <p>
+                Název firmy: @ViewBag.Name
+                <br />
+                IČO: @ViewBag.ICO
+                <br />
+            </p>
+        }
+        else if (ViewBag.Zprava != null)
+        {
+            <p>
+                Chyba: @ViewBag.Zprava
+            </p>
+        }
+
+        <br />
+    </div>
+
+    <div>
+        <button type="button" onclick="location.href='@Url.Action("Index", "FirmList")'">Seznam</button>
+    </div>
+
+</div>
+}

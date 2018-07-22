@@ -1,0 +1,1 @@
+﻿BACKUP DATABASE "Firms" TO DISK='D:\Programming\Ares_ASP.NET_MVC\SQL\backup\backup.bak'

@@ -1,0 +1,1 @@
+﻿RESTORE DATABASE Firms FROM DISK = 'D:\Programming\Ares_ASP.NET_MVC\SQL\backup\backup.bak'

@@ -1,0 +1,36 @@
+﻿@model Ares_ASP.NET_MVC.Models.FirmList
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+
+<div class="jumbotron">
+
+    <h2>Seznam všech firem v databázi.</h2>
+
+    <br />
+
+    @foreach (var item in Model.GetFirmList())
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ICO)
+            </td>
+        </tr>
+
+        <br />
+    }
+
+    <br />
+
+    <div>
+        <button type="button" onclick="location.href='@Url.Action("Index", "Home")'">Zpět na hlavní stránku.</button>
+    </div>
+</div>
+}
