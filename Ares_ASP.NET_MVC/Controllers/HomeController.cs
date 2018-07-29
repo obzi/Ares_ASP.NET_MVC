@@ -1,10 +1,13 @@
 ﻿using Ares_ASP.NET_MVC.Models;
+using Ares_ASP.NET_MVC.Services;
 using System.Web.Mvc;
 
 namespace Ares_ASP.NET_MVC.Controllers
 {
     public class HomeController : Controller
     {
+        private Service service = new Service();
+
         public ActionResult Index()
         {
             return View();
@@ -16,9 +19,8 @@ namespace Ares_ASP.NET_MVC.Controllers
             if (ModelState.IsValid)
             {
                 ViewBag.Zprava = null;
-
-                Firm firm = new Firm();
-                Firm firmResult = firm.Find(firmInput.ICO);
+               
+                Firm firmResult = service.Find(firmInput.ICO);
 
                 if (firmResult == null)
                     ViewBag.Zprava = "IČO nenalezeno!";
