@@ -1,11 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Ares_ASP.NET_MVC.Interface;
+using System.ComponentModel.DataAnnotations;
 
 namespace Ares_ASP.NET_MVC.Models
 {
     /// <summary>
     /// Třída představující firmu z ARES API
     /// </summary>
-    public class Firm
+    public class Firm : IFirm
     {
         /// <summary>
         /// ID
@@ -21,8 +22,9 @@ namespace Ares_ASP.NET_MVC.Models
         /// <summary>
         /// IČO firmy.
         /// </summary>
-        [Display(Name = "Vyhledej firmu dle IČO.")]
-        [Required(ErrorMessage ="Vyplňte povinné pole!")]
-        public string ICO { get; set; }        
+        [Required(ErrorMessage = "Vyplňte povinné pole!")]
+        public string ICO { get; set; }
+
+        public string Zprava { get; set; } = null;
     }
 }

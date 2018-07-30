@@ -1,4 +1,4 @@
-﻿@model Ares_ASP.NET_MVC.Models.FirmList
+﻿@model Ares_ASP.NET_MVC.Services.FirmListService
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -13,7 +13,7 @@
 
     <br />
 
-    @foreach (var item in Model.GetFirmList())
+    @foreach (var item in Model?.GetFirmList().Firms)
     {
         <tr>
             <td>

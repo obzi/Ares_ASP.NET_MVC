@@ -1,4 +1,4 @@
-﻿@model Ares_ASP.NET_MVC.Models.Firm
+﻿@model Ares_ASP.NET_MVC.Interface.IFirm
 
 @{
     ViewBag.Title = "Home Page";
@@ -21,7 +21,7 @@
 
         <div class="editor-field">
             @Html.EditorFor(model => model.ICO)
-            @Html.ValidationMessageFor(model => model.ICO, null, "Vyplňte povinné pole!")
+            @Html.ValidationMessageFor(model => model.ICO)
         </div>
 
         <br />
@@ -32,27 +32,29 @@
     </div>
 
     <div>
-        @if (ViewBag.ICO != null)
+
+        @if (Model?.Name != null)
         {
-            <p>
-                Název firmy: @ViewBag.Name
-                <br />
-                IČO: @ViewBag.ICO
-                <br />
-            </p>
-        }
-        else if (ViewBag.Zprava != null)
-        {
-            <p>
-                Chyba: @ViewBag.Zprava
-            </p>
+        <p>Název firmy: @Model.Name</p>
+            <br />
         }
 
-        <br />
+        @if (Model?.ICO != null)
+        {
+            <p>IČO: @Model.ICO</p>
+            <br />
+        }
+
+        @if (Model?.Zprava != null)
+        {
+            <p>Chyba: @Model.Zprava</p>
+            <br />
+        }
+
     </div>
 
     <div>
-        <button type="button" onclick="location.href='@Url.Action("Index", "FirmList")'">Seznam</button>
+        <button type="button" onclick="location.href='@Url.Action("Index", "FirmList")'">Seznam firem</button>
     </div>
 
 </div>

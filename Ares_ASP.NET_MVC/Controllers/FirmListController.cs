@@ -1,18 +1,18 @@
-﻿using Ares_ASP.NET_MVC.Models;
+﻿using Ares_ASP.NET_MVC.Services;
 using System.Web.Mvc;
 
 namespace Ares_ASP.NET_MVC.Controllers
 {
     public class FirmListController : Controller
     {
+        private FirmListService firmListService = FirmListService.CreateInstance();
+
         public ActionResult Index()
         {
-            FirmList list = null;
-
             if (ModelState.IsValid)
-                list = new FirmList();
+                return View(firmListService);
 
-            return View(list);
+            return View();
         }
     }
 }

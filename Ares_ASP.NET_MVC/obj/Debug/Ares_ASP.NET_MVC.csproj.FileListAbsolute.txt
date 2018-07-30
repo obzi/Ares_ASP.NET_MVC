@@ -92,4 +92,3 @@ D:\Programming\Ares_ASP.NET_MVC\Ares_ASP.NET_MVC\obj\Debug\Ares_ASP.NET_MVC.cspr
 D:\Programming\Ares_ASP.NET_MVC\Ares_ASP.NET_MVC\obj\Debug\Ares_ASP.NET_MVC.csproj.CopyComplete
 D:\Programming\Ares_ASP.NET_MVC\Ares_ASP.NET_MVC\obj\Debug\Ares_ASP.NET_MVC.dll
 D:\Programming\Ares_ASP.NET_MVC\Ares_ASP.NET_MVC\obj\Debug\Ares_ASP.NET_MVC.pdb
-D:\Programming\Ares_ASP.NET_MVC\Ares_ASP.NET_MVC\obj\Debug\Ares_ASP.NET_MVC.csprojAssemblyReference.cache

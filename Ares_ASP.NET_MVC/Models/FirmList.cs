@@ -1,24 +1,18 @@
-﻿using System.Collections.Generic;
-using System.Data.Entity;
+﻿using Ares_ASP.NET_MVC.Interface;
+using Ares_ASP.NET_MVC.Services;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Ares_ASP.NET_MVC.Models
 {
-    public class FirmList
+    public class FirmList : IFirmList
     {
-        public FirmContext context = new FirmContext();
+        private FirmContext context = ContextService.CreateInstance();
 
         /// <summary>
         /// Seznam všech firem ulžoených v localDb
         /// </summary>
-        private DbSet<Firm> firms 
-            => context.Firms;
-
-        /// <summary>
-        /// Vrací seznam všech firem uložených v localDb.
-        /// </summary>
-        /// <returns>Seznam všech firem z localDb. </returns>
-        public List<Firm> GetFirmList()
-            => firms?.ToList() ?? null;
+        public IEnumerable<Firm> Firms
+            => context.Firms.ToList();
     }
 }
